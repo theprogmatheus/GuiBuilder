@@ -5,12 +5,12 @@ import com.sredition.lib.guibuilder.GuiLayout;
 public class CustomLayout implements GuiLayout
 {
 
-	private int size;
+	private int rows;
 	private int[] slots;
 
-	public CustomLayout(int size, int... slots)
+	public CustomLayout(int rows, int... slots)
 	{
-		this.size = size;
+		this.rows = ((rows < 1) || (rows > 6)) ? 6 : rows;
 		this.slots = slots;
 	}
 
@@ -23,7 +23,7 @@ public class CustomLayout implements GuiLayout
 	@Override
 	public int size()
 	{
-		return this.size;
+		return (this.rows * 9);
 	}
 
 }

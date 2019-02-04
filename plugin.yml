@@ -1,0 +1,6 @@
+name: "GuiBuilder"
+main: "com.sredition.lib.guibuilder.examples.Example"
+version: "1.0.0"
+authors: ["Sr_Edition"]
+commands:
+  guibuilder:
