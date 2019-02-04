@@ -38,24 +38,9 @@ public class Example extends JavaPlugin
 
 		// Adicione os métodos que devem ser executados ao clicar nos botões.
 
-		netherStarButton.addGuiRunnable(ClickType.LEFT, new GuiRunnable()
-		{
-			@Override
-			public void run(Player player)
-			{
-				player.sendMessage("§aVocê clicou na Nether Star");
-			}
-		});
+		netherStarButton.addGuiRunnable(ClickType.LEFT, (player) -> { player.sendMessage("§aVocê clicou na Nether Star"); });
 
-		diamondButton.addGuiRunnable(ClickType.LEFT, new GuiRunnable()
-		{
-			@Override
-			public void run(Player player)
-			{
-				player.closeInventory();
-				player.sendMessage("§cVocê fechou o menu");
-			}
-		});
+		diamondButton.addGuiRunnable(ClickType.LEFT, (player) -> { player.closeInventory();player.sendMessage("§cVocê fechou o menu"); });
 
 		// com o método put(GuiButton) você adiciona o botão ao primeiro slot vazio do
 		// inventário.
