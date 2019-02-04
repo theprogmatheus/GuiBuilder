@@ -39,9 +39,6 @@ public class GuiEngine implements Listener
 		}
 
 		HumanEntity whoClicked = event.getWhoClicked();
-		if ((whoClicked == null) || (!(whoClicked instanceof Player))) {
-			return;
-		}
 
 		Player player = (Player) whoClicked;
 
