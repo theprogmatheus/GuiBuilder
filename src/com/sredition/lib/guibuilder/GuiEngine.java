@@ -56,9 +56,9 @@ public class GuiEngine implements Listener
 			if ((clickedInventory != null) && (clickedInventory == inventory)) {
 				GuiButton button = guiFrame.get(event.getSlot());
 				if (button != null) {
-					GuiRunnable runnable = button.getGuiRunnableWithFixed(event.getClick());
-					if (runnable != null) {
-						runnable.run(player);
+					Consumer<? super Player> consumer = button.getGuiRunnableWithFixed(event.getClick());
+					if (consumer != null) {
+						consumer.accept(player);
 					}
 				}
 			}
