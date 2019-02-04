@@ -11,41 +11,41 @@ public class GuiButton
 {
 
 	private ItemStack itemStack;
-	private Map<ClickType, GuiRunnable> runnables;
+	private Map<ClickType, Consumer<? super Player> consumers;
 
 	public GuiButton(ItemStack itemStack)
 	{
 		this.itemStack = itemStack;
-		this.runnables = new HashMap<>();
+		this.consumers = new HashMap<>();
 	}
 
-	public void addGuiRunnable(ClickType clickType, GuiRunnable guiRunnable)
+	public void addGuiRunnable(ClickType clickType, Consumer<? super Player> consumer)
 	{
-		this.runnables.put(clickType, guiRunnable);
+		this.consumers.put(clickType, consumer);
 	}
 
-	public GuiRunnable getGuiRunnable(ClickType clickType)
+	public Consumer<? super Player> getGuiRunnable(ClickType clickType)
 	{
-		return this.runnables.get(clickType);
+		return this.consumers.get(clickType);
 	}
 
-	public GuiRunnable getGuiRunnableWithFixed(ClickType clickType)
+	public Consumer<? super Player> getGuiRunnableWithFixed(ClickType clickType)
 	{
-		GuiRunnable runnable = null;
-		if (!this.runnables.isEmpty()) {
+		Consumer<? super Player> consumer = null;
+		if (!this.consumers.isEmpty()) {
 
-			runnable = this.runnables.get(clickType);
+			consumer = this.consumers.get(clickType);
 
-			if ((runnable == null) && (clickType != ClickType.LEFT)) {
-				runnable = this.runnables.get(ClickType.LEFT);
+			if ((consumer == null) && (clickType != ClickType.LEFT)) {
+				consumer = this.consumers.get(ClickType.LEFT);
 			}
 
-			if (runnable == null) {
-				runnable = this.runnables.values().stream().findFirst().orElse(null);
+			if (consumer == null) {
+				consumer = this.consumers.values().stream().findFirst().orElse(null);
 			}
 
 		}
-		return runnable;
+		return consumer;
 	}
 
 	public ItemStack getItemStack(Player player)
