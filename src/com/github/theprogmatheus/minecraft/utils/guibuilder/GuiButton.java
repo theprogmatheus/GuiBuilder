@@ -1,4 +1,4 @@
-package com.sredition.lib.guibuilder;
+package com.github.theprogmatheus.minecraft.utils.guibuilder;
 
 import java.util.HashMap;
 import java.util.Map;

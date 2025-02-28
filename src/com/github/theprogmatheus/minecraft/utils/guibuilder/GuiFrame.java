@@ -1,4 +1,4 @@
-package com.sredition.lib.guibuilder;
+package com.github.theprogmatheus.minecraft.utils.guibuilder;
 
 import java.util.HashMap;
 
@@ -8,7 +8,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.InventoryView;
 
-import com.sredition.lib.guibuilder.layouts.DefaultLayout;
+import com.github.theprogmatheus.minecraft.utils.guibuilder.layouts.DefaultLayout;
 
 public class GuiFrame implements InventoryHolder
 {

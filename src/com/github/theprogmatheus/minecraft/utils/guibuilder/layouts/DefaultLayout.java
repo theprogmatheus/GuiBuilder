@@ -1,6 +1,6 @@
-package com.sredition.lib.guibuilder.layouts;
+package com.github.theprogmatheus.minecraft.utils.guibuilder.layouts;
 
-import com.sredition.lib.guibuilder.GuiLayout;
+import com.github.theprogmatheus.minecraft.utils.guibuilder.GuiLayout;
 
 public class DefaultLayout implements GuiLayout
 {
